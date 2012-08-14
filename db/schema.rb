@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120522045220) do
+ActiveRecord::Schema.define(:version => 20120516052836) do
 
   create_table "rounds", :force => true do |t|
     t.integer  "score"
@@ -19,9 +19,9 @@ ActiveRecord::Schema.define(:version => 20120522045220) do
     t.integer  "greens"
     t.integer  "putts"
     t.string   "notes"
+    t.date     "date_played"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
-    t.date     "date_played"
   end
 
 end

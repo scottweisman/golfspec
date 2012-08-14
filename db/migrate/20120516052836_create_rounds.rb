@@ -6,6 +6,7 @@ class CreateRounds < ActiveRecord::Migration
       t.integer :greens
       t.integer :putts
       t.string :notes
+      t.date :date_played
 
       t.timestamps
     end

@@ -1,11 +1,11 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.2.3'
+gem 'rails', '3.2.8'
 gem 'rake', '0.9.2.2'
 gem 'jquery-rails'
+gem 'pg'
 
 group :development do
-  gem 'sqlite3' 
   gem 'thin'
   gem 'quiet_assets' 
 end
@@ -17,9 +17,10 @@ end
 
 group :assets do
   gem 'sass-rails'
-  gem 'coffee-rails', '3.2.2'
+  gem 'coffee-rails'
   gem 'uglifier'
-  gem 'bootstrap-sass', '~> 2.0.1'
+  gem 'compass-rails', '~> 1.0.3'
+  gem 'zurb-foundation', '~> 3.0.1'
 end
 
 group :test do 
@@ -27,8 +28,4 @@ group :test do
 	gem 'capybara'
 	gem 'launchy'
 	gem 'database_cleaner'
-end
-
-group :production do
-  gem 'pg'
 end

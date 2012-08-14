@@ -1,6 +1,7 @@
 <h1>Your Rounds</h1>
 
 <table>
+<thead>
   <tr>
     <th>Date</th>
     <th>Score</th>
@@ -8,23 +9,23 @@
     <th>Greens</th>
     <th>Putts</th>
     <th>Notes</th>
-    <th></th>
-    <th></th>
+    <th>Edit</th>
   </tr>
+</thead>
 
+<tbody>
 <% @rounds.each do |round| %>
   <tr>
-    <td><%= round.date_played %></td>
+    <td><%= link_to round.date_played, round %></td>
     <td><%= round.score %></td>
     <td><%= round.fairways %></td>
     <td><%= round.greens %></td>
     <td><%= round.putts %></td>
     <td><%= round.notes %></td>
-    <td><%= link_to 'Show', round %></td>
     <td><%= link_to 'Edit', edit_round_path(round) %></td>
-    <td><%= link_to 'Destroy', round, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>
+</tbody>
 </table>
 
 <br />
