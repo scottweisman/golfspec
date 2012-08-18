@@ -1,7 +1,7 @@
 class RoundsController < ApplicationController
 
   def index
-    @rounds = Round.order("created_at DESC")
+    @rounds = Round.order("date_played DESC")
 
     respond_to do |format|
       format.html # index.html.erb

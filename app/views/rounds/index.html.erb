@@ -17,7 +17,7 @@
 <tbody>
 <% @rounds.each do |round| %>
   <tr>
-    <td><%= link_to round.date_played, round %></td>
+    <td><%= link_to round.date_played.strftime('%m/%d/%y'), round %></td>
     <td><%= round.score %></td>
     <td><%= round.fairways %></td>
     <td><%= round.greens %></td>
