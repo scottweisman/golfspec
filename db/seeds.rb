@@ -1,7 +1,12 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+if Rails.env.development?
+  Round.destroy_all
+
+  20.times do
+  	Round.create!( date_played: Time.at(rand * Time.now.to_i), score: rand(68..85), fairways: rand(3..14), 
+  								 greens: rand(2..18), putts: rand(26..38), notes: "Great round!")
+  end
+
+	puts 'Development database seeded.'
+else
+	puts 'Do not seed the DB in production!'
+end

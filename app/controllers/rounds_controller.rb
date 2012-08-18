@@ -1,8 +1,7 @@
 class RoundsController < ApplicationController
-  # GET /rounds
-  # GET /rounds.json
+
   def index
-    @rounds = Round.all
+    @rounds = Round.order("created_at DESC")
 
     respond_to do |format|
       format.html # index.html.erb
@@ -10,8 +9,6 @@ class RoundsController < ApplicationController
     end
   end
 
-  # GET /rounds/1
-  # GET /rounds/1.json
   def show
     @round = Round.find(params[:id])
 
@@ -21,8 +18,6 @@ class RoundsController < ApplicationController
     end
   end
 
-  # GET /rounds/new
-  # GET /rounds/new.json
   def new
     @round = Round.new
 
@@ -32,45 +27,34 @@ class RoundsController < ApplicationController
     end
   end
 
-  # GET /rounds/1/edit
   def edit
     @round = Round.find(params[:id])
   end
 
-  # POST /rounds
-  # POST /rounds.json
   def create
     @round = Round.new(params[:round])
 
     respond_to do |format|
       if @round.save
-        format.html { redirect_to @round, notice: 'Round was successfully created.' }
-        format.json { render json: @round, status: :created, location: @round }
+        redirect_to rounds_path, notice: 'Round was successfully created.'
       else
-        format.html { render action: "new" }
-        format.json { render json: @round.errors, status: :unprocessable_entity }
+        render action: "new"
       end
     end
   end
 
-  # PUT /rounds/1
-  # PUT /rounds/1.json
   def update
     @round = Round.find(params[:id])
 
     respond_to do |format|
       if @round.update_attributes(params[:round])
-        format.html { redirect_to @round, notice: 'Round was successfully updated.' }
-        format.json { head :no_content }
+        redirect_to round_path, notice: 'Round was successfully updated.'
       else
-        format.html { render action: "edit" }
-        format.json { render json: @round.errors, status: :unprocessable_entity }
+        render action: "edit"
       end
     end
   end
 
-  # DELETE /rounds/1
-  # DELETE /rounds/1.json
   def destroy
     @round = Round.find(params[:id])
     @round.destroy
