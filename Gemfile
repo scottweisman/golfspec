@@ -5,11 +5,11 @@ gem 'rake', '0.9.2.2'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'pg'
+gem 'thin'
 gem 'omniauth-facebook', '1.4.0'
 gem 'koala'
 
 group :development do
-  gem 'thin'
   gem 'quiet_assets' 
 end
 
