@@ -221,4 +221,4 @@ DEPENDENCIES
   sass-rails
   thin
   uglifier
-  zurb-foundation (~> 3.0.1)
+  zurb-foundation (~> 3.0.9)

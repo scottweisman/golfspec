@@ -23,7 +23,7 @@ group :assets do
   gem 'coffee-rails'
   gem 'uglifier'
   gem 'compass-rails', '~> 1.0.3'
-  gem 'zurb-foundation', '~> 3.0.1'
+  gem 'zurb-foundation', '~> 3.0.9'
 end
 
 group :test do 
