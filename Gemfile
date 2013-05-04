@@ -1,16 +1,17 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.2.8'
+gem 'rails', '3.2.13'
 gem 'rake', '0.9.2.2'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'pg'
 gem 'thin'
-gem 'omniauth-facebook', '1.4.0'
+gem 'omniauth-facebook'
 gem 'koala'
+gem 'simple_form'
 
 group :development do
-  gem 'quiet_assets' 
+  gem 'quiet_assets'
 end
 
 group :development, :test do
@@ -22,11 +23,11 @@ group :assets do
   gem 'sass-rails'
   gem 'coffee-rails'
   gem 'uglifier'
-  gem 'compass-rails', '~> 1.0.3'
-  gem 'zurb-foundation', '~> 3.0.9'
+  gem 'compass-rails'
+  gem 'zurb-foundation', '3.2.5'
 end
 
-group :test do 
+group :test do
 	gem 'faker'
 	gem 'capybara'
 	gem 'launchy'

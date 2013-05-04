@@ -3,6 +3,4 @@ class Round < ActiveRecord::Base
   validates_presence_of :score, :date_played
   validates_numericality_of :fairways, :greens, :putts, :score
 
-
-
 end

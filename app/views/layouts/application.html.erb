@@ -10,12 +10,27 @@
 </head>
 <body>
 
+<nav class="top-bar">
+  <ul>
+    <li class="name"><h1><%= link_to 'GolfSpec', root_path %></h1></li>
+  </ul>
+  <section>
+    <ul class="left">
+      <li class="divider"></li>
+      <li><%= link_to '+ Add a Round', new_round_path %></li>
+      <li class="divider"></li>
+    </ul>
+    <ul class="right">
+      <li class="divider"></li>
+      <li><%= link_to 'Sign out', '' %></li>
+    </ul>
+  </section>
+</nav>
+
+<div class="four columns centered page_title"><%= @page_title %></div>
+
 <div class="row">
   <div class="eight columns centered">
-
-  	<%= link_to 'Rounds', rounds_path %> |
-  	<%= link_to 'Stats', stats_path %>
-
 		<%= yield %>
 	</div>
 </div>
