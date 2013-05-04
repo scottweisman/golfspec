@@ -1,13 +1,11 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.2.13'
-gem 'rake', '0.9.2.2'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'pg'
 gem 'thin'
-gem 'omniauth-facebook'
-gem 'koala'
+gem 'omniauth-facebook', '1.4.0'
 gem 'simple_form'
 
 group :development do

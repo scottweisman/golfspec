@@ -1,8 +1,10 @@
 class RoundsController < ApplicationController
 
   def index
-    @rounds = Round.order("date_played DESC")
-    @page_title = "Your Rounds"
+    if current_user
+      @rounds = current_user.rounds.order("date_played DESC")
+      @page_title = "Your Rounds"
+    end
   end
 
   def show
@@ -11,6 +13,7 @@ class RoundsController < ApplicationController
 
   def new
     @round = Round.new
+    @page_title = "New Round"
   end
 
   def edit
@@ -19,7 +22,7 @@ class RoundsController < ApplicationController
   end
 
   def create
-    @round = Round.new(params[:round])
+    @round = current_user.rounds.new(params[:round])
 
     if @round.save
       redirect_to rounds_path, notice: 'Your round was added.'

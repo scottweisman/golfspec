@@ -1,25 +1,37 @@
-<table>
-<thead>
-  <tr>
-    <th>Date</th>
-    <th>Score</th>
-    <th>Fairways</th>
-    <th>Greens</th>
-    <th>Putts</th>
-    <th>Notes</th>
-  </tr>
-</thead>
+<% if current_user && current_user.rounds.any? %>
 
-<tbody>
-<% @rounds.each do |round| %>
-  <tr>
-    <td><%= link_to round.date_played.strftime('%m/%d/%y'), round %></td>
-    <td><%= round.score %></td>
-    <td><%= round.fairways %></td>
-    <td><%= round.greens %></td>
-    <td><%= round.putts %></td>
-    <td><%= round.notes %></td>
-  </tr>
+  <table>
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Score</th>
+      <th>Fairways</th>
+      <th>Greens</th>
+      <th>Putts</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @rounds.each do |round| %>
+    <tr>
+      <td><%= link_to round.date_played.strftime('%m/%d/%y'), round %></td>
+      <td><%= round.score %></td>
+      <td><%= round.fairways %></td>
+      <td><%= round.greens %></td>
+      <td><%= round.putts %></td>
+      <td><%= round.notes %></td>
+    </tr>
+  <% end %>
+  </tbody>
+  </table>
+
+<% elsif current_user %>
+
+  <h3><%= link_to 'Enter your first round', new_round_path %></h3>
+
+<% else %>
+
+  <h3><%= link_to 'Sign in to get started', "/auth/facebook" %></h3>
+
 <% end %>
-</tbody>
-</table>
