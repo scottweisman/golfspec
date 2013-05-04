@@ -7,6 +7,7 @@ gem 'pg'
 gem 'thin'
 gem 'omniauth-facebook', '1.4.0'
 gem 'simple_form'
+gem "font-awesome-rails"
 
 group :development do
   gem 'quiet_assets'

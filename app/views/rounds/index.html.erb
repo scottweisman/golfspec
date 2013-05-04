@@ -28,10 +28,24 @@
 
 <% elsif current_user %>
 
-  <h3><%= link_to 'Enter your first round', new_round_path %></h3>
+  <div class="row">
+    <div class="six columns centered">
+      <div class="panel">
+        <h5>Welcome to GolfSpec.</h5>
+        <p>To get started, enter your score and stats from a recent round.</p>
+      </div>
+    </div>
+  </div>
 
 <% else %>
 
-  <h3><%= link_to 'Sign in to get started', "/auth/facebook" %></h3>
+  <div class="row">
+    <div class="six columns centered">
+      <div class="panel">
+        <h5>Welcome to GolfSpec.</h5>
+        <p>Sign in with Facebook to get started.</p>
+      </div>
+    </div>
+  </div>
 
 <% end %>
