@@ -1,3 +1,7 @@
+<% content_for :left_nav do %>
+  <%= link_to '<i class="icon-plus-sign"></i>'.html_safe, new_round_path %>
+<% end %>
+
 <% if current_user && current_user.rounds.any? %>
 
   <table>
