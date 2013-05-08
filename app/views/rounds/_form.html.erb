@@ -1,5 +1,5 @@
 <%= simple_form_for @round do |f| %>
-  <%= f.input :date_played, as: :string %>
+  <%= f.input :date_played, as: :string, input_html: { :value => Date.today.strftime("%b %d, %Y") }  %>
   <%= f.input :score, as: :string %>
   <%= f.input :fairways, as: :string %>
   <%= f.input :greens, as: :string %>
