@@ -4,6 +4,14 @@
 
 <% if current_user %>
 
+<dl class="tabs">
+  <dd class="active"><a href="#rounds">Rounds</a></dd>
+  <dd><a href="#stats">Stats</a></dd>
+</dl>
+
+<ul class="tabs-content">
+  <li class="active" id="roundsTab">
+
   <table>
   <thead>
     <tr>
@@ -29,6 +37,10 @@
   <% end %>
   </tbody>
   </table>
+
+</li>
+
+<li id="statsTab">These are your stats</li>
 
 <% else %>
 
