@@ -1,4 +1,5 @@
 class RoundsController < ApplicationController
+  before_filter :redirect_user_without_rounds_to_new_round, only: :index
 
   def index
     if current_user
@@ -45,4 +46,12 @@ class RoundsController < ApplicationController
     @round = Round.find(params[:id])
     @round.destroy
   end
+
+  private
+
+    def redirect_user_without_rounds_to_new_round
+      if current_user && current_user.rounds.blank?
+        redirect_to new_round_path, notice: 'Add your first round'
+      end
+    end
 end

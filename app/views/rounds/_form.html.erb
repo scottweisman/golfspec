@@ -4,6 +4,6 @@
   <%= f.input :fairways, as: :string %>
   <%= f.input :greens, as: :string %>
   <%= f.input :putts, as: :string %>
-  <%= f.input :notes, as: :text %>
+  <%= f.input :notes, as: :text, input_html: { :rows => 5 } %>
   <%= f.button :submit %>
 <% end %>

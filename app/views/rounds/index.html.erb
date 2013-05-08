@@ -2,7 +2,7 @@
   <%= link_to '<i class="icon-plus-sign"></i>'.html_safe, new_round_path %>
 <% end %>
 
-<% if current_user && current_user.rounds.any? %>
+<% if current_user %>
 
   <table>
   <thead>
@@ -29,17 +29,6 @@
   <% end %>
   </tbody>
   </table>
-
-<% elsif current_user %>
-
-  <div class="row">
-    <div class="six columns centered">
-      <div class="panel">
-        <h5>Welcome to GolfSpec.</h5>
-        <p>To get started, enter your score and stats from a recent round.</p>
-      </div>
-    </div>
-  </div>
 
 <% else %>
 
