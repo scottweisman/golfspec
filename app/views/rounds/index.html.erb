@@ -17,10 +17,9 @@
     <tr>
       <th>Date</th>
       <th>Score</th>
-      <th>Fairways</th>
-      <th>Greens</th>
-      <th>Putts</th>
-      <th>Notes</th>
+      <th>F</th>
+      <th>G</th>
+      <th>P</th>
     </tr>
   </thead>
 
@@ -32,7 +31,9 @@
       <td><%= round.fairways %></td>
       <td><%= round.greens %></td>
       <td><%= round.putts %></td>
-      <td><%= round.notes %></td>
+    </tr>
+    <tr>
+      <td colspan="5"><%= round.notes %></td>
     </tr>
   <% end %>
   </tbody>
